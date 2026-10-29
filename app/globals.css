@@ -1,0 +1,96 @@
+@import "tailwindcss";
+
+:root {
+  --accent: #7c5cff;
+  --accent-hot: #dfe8ff;
+  --font-hud: ui-monospace, "JetBrains Mono", "SF Mono", "Cascadia Mono", Menlo, Consolas, monospace;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  background: #000;
+  color: #fff;
+  overflow: hidden;
+  overscroll-behavior: none;
+  -webkit-font-smoothing: antialiased;
+  font-family: var(--font-hud);
+}
+
+@layer components {
+  .hud-label {
+    font-family: var(--font-hud);
+    font-size: 9.5px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    line-height: 1.2;
+  }
+
+  .hud-num {
+    font-family: var(--font-hud);
+    font-variant-numeric: tabular-nums;
+    letter-spacing: 0.08em;
+  }
+
+  .hud-panel {
+    background: linear-gradient(180deg, rgba(10, 12, 22, 0.55), rgba(4, 5, 10, 0.45));
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    backdrop-filter: blur(14px) saturate(120%);
+    -webkit-backdrop-filter: blur(14px) saturate(120%);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+  }
+
+  .hud-corner {
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    border-color: rgba(255, 255, 255, 0.18);
+  }
+
+  .hud-range {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 14px;
+    background: transparent;
+    cursor: pointer;
+  }
+  .hud-range::-webkit-slider-runnable-track {
+    height: 1px;
+    background: linear-gradient(90deg, var(--accent) var(--fill, 0%), rgba(255, 255, 255, 0.14) var(--fill, 0%));
+  }
+  .hud-range::-moz-range-track {
+    height: 1px;
+    background: linear-gradient(90deg, var(--accent) var(--fill, 0%), rgba(255, 255, 255, 0.14) var(--fill, 0%));
+  }
+  .hud-range::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 7px;
+    height: 7px;
+    margin-top: -3px;
+    border-radius: 0;
+    background: #fff;
+    transform: rotate(45deg);
+    box-shadow: 0 0 8px var(--accent);
+  }
+  .hud-range::-moz-range-thumb {
+    width: 7px;
+    height: 7px;
+    border: 0;
+    border-radius: 0;
+    background: #fff;
+    transform: rotate(45deg);
+    box-shadow: 0 0 8px var(--accent);
+  }
+}
+
+::-webkit-scrollbar {
+  width: 3px;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.12);
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}

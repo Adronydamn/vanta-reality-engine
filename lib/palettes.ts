@@ -1,0 +1,58 @@
+import type { Palette, PaletteId } from "@/types/vanta";
+
+export const PALETTES: Record<PaletteId, Palette> = {
+  vanta: {
+    id: "vanta",
+    label: "VANTA",
+    background: "#020309",
+    haze: "#0d1640",
+    deep: "#03040c",
+    mid: "#1b2a6b",
+    rim: "#7c5cff",
+    hot: "#dfe8ff",
+    particleA: "#5b7cff",
+    particleB: "#b9a6ff",
+    bloom: 1.0,
+  },
+  plasma: {
+    id: "plasma",
+    label: "PLASMA",
+    background: "#050106",
+    haze: "#2a0626",
+    deep: "#070208",
+    mid: "#5a0b3e",
+    rim: "#ff2f8e",
+    hot: "#fff1dc",
+    particleA: "#ff3d9a",
+    particleB: "#ff8a2a",
+    bloom: 1.15,
+  },
+  aurora: {
+    id: "aurora",
+    label: "AURORA",
+    background: "#010604",
+    haze: "#03261d",
+    deep: "#010806",
+    mid: "#0b4a3e",
+    rim: "#2fffd0",
+    hot: "#eafff6",
+    particleA: "#22d3b4",
+    particleB: "#9dffd6",
+    bloom: 0.95,
+  },
+  solar: {
+    id: "solar",
+    label: "SOLAR",
+    background: "#060201",
+    haze: "#2a0a03",
+    deep: "#090302",
+    mid: "#5c1406",
+    rim: "#ff9a1f",
+    hot: "#fff0c2",
+    particleA: "#ff5a1f",
+    particleB: "#ffc94a",
+    bloom: 1.1,
+  },
+};
+
+export const PALETTE_IDS = Object.keys(PALETTES) as PaletteId[];
